@@ -1,7 +1,7 @@
 # CRUD USER
-![](https://github.com/danielmiranda0099/FRONT_buenaData/tree/master/public/assets/captura.png)
-![](https://github.com/danielmiranda0099/FRONT_buenaData/tree/master/public/assets/captura1.png)
-![](https://github.com/danielmiranda0099/FRONT_buenaData/tree/master/public/assets/captura2.png)
+![](https://github.com/danielmiranda0099/FRONT_buenaData/tree/master/public/assets/captura.PNG)
+![](https://github.com/danielmiranda0099/FRONT_buenaData/tree/master/public/assets/captura1.PNG)
+![](https://github.com/danielmiranda0099/FRONT_buenaData/tree/master/public/assets/captura2.PNG)
 ## Pasos para instalar el proyecto.
 ### `1. Clona el proyecto en tu entorno local`
 ### `2. npm install`
