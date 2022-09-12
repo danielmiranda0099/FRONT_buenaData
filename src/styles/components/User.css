@@ -1,0 +1,22 @@
+
+
+.userlist-header{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.userlist-body{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.userlist-body-item{
+    display: flex;
+    justify-content: space-around;
+
+    padding: 20px;
+
+    border-bottom: 1px solid rgb(210, 210, 210);
+}

@@ -1,0 +1,8 @@
+
+
+@import "./normalize.css";
+
+@import "./components/User.css";
+@import "./components/AddUser.css";
+@import "./components/Modal.css";
+@import "./components/DetailUser.css";

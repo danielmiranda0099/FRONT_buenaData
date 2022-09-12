@@ -1,8 +1,9 @@
-import { useParams } from "react-router-dom";
+import { DetailUser } from "../components/DetailUser";
+
 
 export function Detail() {
-    const {id} = useParams();
+    
     return(
-        <h1>Detail: {id}</h1>
+        <DetailUser />
     )
 }

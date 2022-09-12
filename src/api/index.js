@@ -1,10 +1,10 @@
 import axios from "axios"
 
-export async function http(url, method, data={}) {
+export async function http(url, method='get', data={}) {
     const options = {
         method,
         url,
-        data: JSON.stringify(data)
+        data
     }
     const response = await axios(options)
     return response;
