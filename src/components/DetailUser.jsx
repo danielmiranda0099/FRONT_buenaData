@@ -19,7 +19,6 @@ export function DetailUser({}) {
 
     const handleEliminar = async() => {
         const response = await http(`http://localhost:3001/api/users`, 'delete', {numeroId: id});
-        console.log('*** delete user ***',response);
         navigate('/users');
     }
 
@@ -27,7 +26,6 @@ export function DetailUser({}) {
         const response = await http(`http://localhost:3001/api/users/${id}`, 'get');
         const {data} = response;
         setUser(data);
-        console.log(data);
     }
 
     useEffect( () => {
@@ -36,24 +34,26 @@ export function DetailUser({}) {
 
     return(
     <div className="detail-user-container">
+        <div className="detail-user-banner"></div>
+
         <div className="detail-user-controlls-container">
             <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" />
             <div className="detail-user-controlls">
-                <button onClick={handleEliminar}>Eliminar</button>
-                <button onClick={() => setIsOpenDetailUser(true)}>Actualizar</button>
+                <button onClick={handleEliminar} className='button-controll'>Eliminar</button>
+                <button onClick={() => setIsOpenDetailUser(true)} className='button-controll'>Actualizar</button>
             </div>
         </div>
 
         <div className="detail-user-information">
-            <h1>{user.nombre}</h1>
-            <h1>{user.apellido}</h1>
-            <h1>{user.email}</h1>
-            <h1>{user.telefono}</h1>
-            <h1>{new Date(user.fechaNacimiento).toLocaleDateString()}</h1>
+            <div className="detail-user-information-item"> <h1>Nombre: </h1> <h2>{user.nombre}</h2> </div> 
+            <div className="detail-user-information-item"> <h1>Apellido: </h1> <h2>{user.apellido}</h2> </div> 
+            <div className="detail-user-information-item"> <h1>Email: </h1> <h2>{user.email}</h2> </div> 
+            <div className="detail-user-information-item"> <h1>Telefono: </h1> <h2>{user.telefono}</h2> </div> 
+            <div className="detail-user-information-item"> <h1>Fecha Nacimineto: </h1> <h2>{new Date(user.fechaNacimiento).toLocaleDateString()}</h2> </div> 
         </div>
 
         <Modal isOpen={isOpenDetailUser} setIsOpen={setIsOpenDetailUser}>
-            <FormularioUser dataUser={user} type={type} />
+            <FormularioUser dataUser={user} type={type} setIsOpen={setIsOpenDetailUser} setState={setUser}/>
         </Modal>
     </div>
     )

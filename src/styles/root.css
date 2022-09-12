@@ -2,6 +2,9 @@
 
 @import "./normalize.css";
 
+@import "./views/Home.css";
+@import "./views/View404.css";
+@import "./components/basic.css";
 @import "./components/User.css";
 @import "./components/AddUser.css";
 @import "./components/Modal.css";

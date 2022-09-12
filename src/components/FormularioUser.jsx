@@ -11,24 +11,24 @@ const userDefault = {
     fechaNacimiento: new Date().toLocaleDateString('en-CA')
 }
 
-export function FormularioUser({dataUser=userDefault, type}) {
+export function FormularioUser({dataUser=userDefault, type, setState, users, setIsOpen}) {
     const [newUser, setNewuser] = useState(dataUser);
-    console.log(newUser.numeroId);
-    console.log(newUser);
     const disabledButton = !newUser.nombre.length > 0 && 
                         !newUser.apellido.length > 0 && 
                         !newUser.email.length > 0;
 
     const handleNewUser = async () => {
-        console.log(newUser);
         const response = await http('http://localhost:3001/api/users', 'post', newUser);
-        console.log(response);
+        const {data:{newUser:resNewUser}} = response;
+        setState([...users,resNewUser]);
+        setIsOpen(false);
     }
 
     const handleAtualizar = async () => {
-        console.log(newUser);
         const response = await http(`http://localhost:3001/api/users/${newUser.numeroId}`, 'patch', newUser);
-        console.log(response);
+        const {data:{user}} = response;
+        setState(user);
+        setIsOpen(false);
     }
 
     const evento = {

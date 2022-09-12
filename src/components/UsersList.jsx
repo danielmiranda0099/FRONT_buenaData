@@ -7,8 +7,8 @@ import { User } from "./User";
 
 export function UsersList() {
     const [users, setusers] = useState([]);
+    const [filter, setFilter] = useState('');
     const [isOpenAddUser, setIsOpenAddUser] = useState(false);
-
     const getUsers = async() => {
         const {data} = await http('http://localhost:3001/api/users');
         setusers(data);
@@ -21,16 +21,32 @@ export function UsersList() {
     return(
         <>
         <div className="userlist-container">
-        <div className="userlist-header">
-            <h3>nombre</h3>
-            <h3>apellido</h3>
-            <h3>Telefono</h3>
-            <h3>Email</h3>
-        </div>
-            <User users={users}/>
-        </div>
+        {
+            users.length > 0 ? 
+            <>
+            <div className="userlist-input">
+                <input type="text" placeholder="Buscar usuario" value={filter} onChange={(e) => setFilter(e.target.value)}/>
+            </div>
 
-        <AddUser isOpen={isOpenAddUser} setIsOpen={setIsOpenAddUser}  />
+            <div className="userlist-header">
+                <h3>nombre</h3>
+                <h3>apellido</h3>
+                <h3>Telefono</h3>
+                <h3>Email</h3>
+                <h3>Detalle</h3>
+            </div>
+            <User users={users} filter={filter}/>
+            </>
+            :
+            <>
+            <h1>No hay Usuarios en el momento</h1>
+            <h1>Puede crear uno en el simbolo de +</h1>
+            </>
+        }
+        </div>
+    
+        <AddUser isOpen={isOpenAddUser} setIsOpen={setIsOpenAddUser}  setusers={setusers} users={users} />
+
         </>
     )
 }

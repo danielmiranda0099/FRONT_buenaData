@@ -1,7 +1,7 @@
 import { FormularioUser } from "./FormularioUser";
 import { Modal } from "./Modal";
 
-export function AddUser({isOpen ,setIsOpen}) {
+export function AddUser({isOpen ,setIsOpen, setusers, users}) {
 
     const type = {
         descripcion: 'Crear',
@@ -16,7 +16,7 @@ export function AddUser({isOpen ,setIsOpen}) {
         </span>
 
         <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
-            <FormularioUser type={type}/>
+            <FormularioUser type={type} setState={setusers} users={users} setIsOpen={setIsOpen}/>
         </Modal>
        </>
     )
