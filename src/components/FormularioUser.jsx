@@ -38,8 +38,8 @@ export function FormularioUser({dataUser=userDefault, type, setState, users, set
 
     return(
         <div className="add-user-container">
-            <div className="add-user-container-item">
-            <label>Nombre:</label>
+            <div className="add-user">
+            <label>Nombre:
             <input 
                 type='text' 
                 placeholder="Nombre" 
@@ -48,7 +48,8 @@ export function FormularioUser({dataUser=userDefault, type, setState, users, set
                     setNewuser({...newUser, nombre: e.target.value})}
                 }
             />
-            <label>Apellido:</label>
+            </label>
+            <label>Apellido:
             <input 
                 type='text' 
                 placeholder="Apellido" 
@@ -57,7 +58,8 @@ export function FormularioUser({dataUser=userDefault, type, setState, users, set
                     setNewuser({...newUser, apellido: e.target.value})}
                 }
             />
-            <label>Numero de ID:</label>
+            </label>
+            <label>Numero de ID:
             <input 
                 type='number' 
                 placeholder="Numero de ID" 
@@ -66,7 +68,8 @@ export function FormularioUser({dataUser=userDefault, type, setState, users, set
                     setNewuser({...newUser, numeroId: e.target.value})}
                 }
             />
-            <label>Telefono:</label>
+            </label>
+            <label>Telefono:
             <input 
                 type='number' 
                 placeholder="Telefono" 
@@ -75,7 +78,8 @@ export function FormularioUser({dataUser=userDefault, type, setState, users, set
                     setNewuser({...newUser, telefono: e.target.value})}
                 }
             />
-            <label>Email:</label>
+            </label>
+            <label>Email:
             <input 
                 type='email' 
                 placeholder="Email" 
@@ -84,7 +88,8 @@ export function FormularioUser({dataUser=userDefault, type, setState, users, set
                     setNewuser({...newUser, email: e.target.value})}
                 }
             />
-            <label>Imagen URL:</label>
+            </label>
+            <label>Imagen URL:
             <input 
                 type='text' 
                 placeholder="Imagen URL" 
@@ -93,7 +98,8 @@ export function FormularioUser({dataUser=userDefault, type, setState, users, set
                     setNewuser({...newUser, image: e.target.value})}
                 }
             />
-            <label>Fecha de Nacimiento:</label>
+            </label>
+            <label>Fecha de Nacimiento:
             <input 
                 type='date' 
                 value={ new Date(newUser.fechaNacimiento).toLocaleDateString('en-CA')}
@@ -101,10 +107,11 @@ export function FormularioUser({dataUser=userDefault, type, setState, users, set
                     setNewuser({...newUser, fechaNacimiento: e.target.value})}
                 }
             />
-            </div>
+            </label>
 
-            <div className="add-user-container-button">
+            <div className="add-user-button">
                 <button disabled={disabledButton} onClick={evento[type.event]}>{type.descripcion}</button>
+            </div>
             </div>
         </div>
     ) 

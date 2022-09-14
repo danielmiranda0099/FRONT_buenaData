@@ -15,12 +15,12 @@ export function User({users, filter}) {
         <>
         {
         userFiltrados.map( (user, index) => 
-            <div className="userlist-body-item" style={{backgroundColor:index%2!== 0? '#678BC1': '#0E1F40'}} key={user.numeroId}>
-            <h3>{user.nombre}</h3>
-            <h3>{user.apellido}</h3>
-            <h3>{user.telefono}</h3>
-            <h3>{user.email}</h3>
-            <button onClick={() => handleClick(user.numeroId)} className='button-primary'>Ver mas</button>
+            <div className="userlist-body row-5" style={{backgroundColor:index%2!== 0? '#678BC1': '#0E1F40'}} key={user.numeroId}>
+            <div className="userlist-body-item flex-column flex-center"> <h4>{user.nombre}</h4> </div>
+            <div className="userlist-body-item flex-column flex-center"> <h4>{user.apellido}</h4> </div>
+            <div className="userlist-body-item flex-column flex-center"> <h4>{user.telefono}</h4> </div>
+            <div className="userlist-body-item flex-column flex-center"> <h4>{user.email}</h4> </div>
+            <div className="userlist-body-item flex-row flex-center"> <button onClick={() => handleClick(user.numeroId)} className='button-primary'>Ver mas</button> </div>
             </div>
         )
         }

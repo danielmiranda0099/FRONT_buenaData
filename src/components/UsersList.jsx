@@ -28,12 +28,12 @@ export function UsersList() {
                 <input type="text" placeholder="Buscar usuario" value={filter} onChange={(e) => setFilter(e.target.value)}/>
             </div>
 
-            <div className="userlist-header">
-                <h3>nombre</h3>
-                <h3>apellido</h3>
-                <h3>Telefono</h3>
-                <h3>Email</h3>
-                <h3>Detalle</h3>
+            <div className="userlist-header row-5">
+                <div> <h3>NOMBRE</h3> </div>
+                <div> <h3>APELLIDO</h3> </div>
+                <div> <h3>TELEFONO</h3> </div>
+                <div> <h3>EMAIL</h3> </div>
+                <div className="flex-row flex-center"> <h3>DETALLE</h3> </div>
             </div>
             <User users={users} filter={filter}/>
             </>

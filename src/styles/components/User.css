@@ -23,10 +23,8 @@
 }
 
 .userlist-header,
-.userlist-body-item{
+.userlist-body{
     width: 80%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
     padding: 20px 10px;
 }
 .userlist-header{
@@ -34,12 +32,13 @@
     color: white;
 }
 
-.userlist-body-item{
-    border-bottom: 1px solid rgb(210, 210, 210);
-    color: white;
+.userlist-body{
 }
-
+.userlist-body-item{
+    overflow: hidden;
+}
 .userlist-body-item .button-primary{
+    width: 80%;
     color: white;
     border: 3px solid #F23838;
     background-color: inherit;

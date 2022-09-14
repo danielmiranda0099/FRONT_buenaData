@@ -1,3 +1,19 @@
+.row-5{
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.flex-row{
+    display: flex;
+}
+
+.flex-center{
+    justify-content: center;
+}
+
 
 .button-primary{
     width: 100%;
