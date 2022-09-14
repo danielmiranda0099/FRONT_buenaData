@@ -19,34 +19,39 @@ export function UsersList() {
     }, [])
 
     return(
-        <>
-        <div className="userlist-container">
-        {
-            users.length > 0 ? 
-            <>
+        
+        <div className="userlist-container-main">
+        { users.length > 0 ?
+            <div className="userlist-container">
             <div className="userlist-input">
                 <input type="text" placeholder="Buscar usuario" value={filter} onChange={(e) => setFilter(e.target.value)}/>
             </div>
 
-            <div className="userlist-header row-5">
-                <div> <h3>NOMBRE</h3> </div>
-                <div> <h3>APELLIDO</h3> </div>
-                <div> <h3>TELEFONO</h3> </div>
-                <div> <h3>EMAIL</h3> </div>
-                <div className="flex-row flex-center"> <h3>DETALLE</h3> </div>
+            <table className="userlist-table">
+
+            <thead>
+                <tr>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">APELLIDO</th>
+                <th scope="col">TELEFONO</th>
+                <th scope="col">EMAIL</th>
+                <th><div className="flex-row flex-center"> <h3>DETALLE</h3> </div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <User users={users} filter={filter}/>
+            </tbody>
+            </table>
+            
+            
             </div>
-            <User users={users} filter={filter}/>
-            </>
             :
             <>
             <h1>No hay Usuarios en el momento</h1>
             <h1>Puede crear uno en el simbolo de +</h1>
             </>
         }
-        </div>
-    
         <AddUser isOpen={isOpenAddUser} setIsOpen={setIsOpenAddUser}  setusers={setusers} users={users} />
-
-        </>
+        </div>
     )
 }

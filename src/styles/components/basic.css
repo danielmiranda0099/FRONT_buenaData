@@ -2,6 +2,10 @@
     display: grid;
     grid-template-columns: repeat(5, 20%);
 }
+
+.flex {
+    display: flex !important;
+}
 .flex-column{
     display: flex;
     flex-direction: column;
@@ -9,9 +13,12 @@
 .flex-row{
     display: flex;
 }
-
 .flex-center{
     justify-content: center;
+}
+.flex-center-center{
+    justify-content: center;
+    align-items: center;
 }
 
 
